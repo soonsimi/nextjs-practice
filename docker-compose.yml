@@ -1,0 +1,9 @@
+version: "3"
+services:
+  nextjs-practice:
+    image: nextjs-practice
+    volumes:
+      - /usr/src/app/node_moduls
+      - .:/usr/src/app
+    ports:
+      - "3000:3000"
