@@ -20,3 +20,16 @@ Outlined.args = {
     outlined: true,
     children: 'Button'
 }
+
+export const Small = Template.bind({});
+Small.args = {
+    size: 'small',
+    children: 'Button',
+}
+
+export const OutlinedSmall = Template.bind({});
+OutlinedSmall.args = {
+    outlined: true,
+    size: 'small',
+    children: 'Button',
+}
