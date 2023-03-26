@@ -35,6 +35,7 @@ const Capturehtml: NextPage = () => {
         <video
           ref={videoRef}
           className="w-screen md:w-2/3 md:scale-x-[-1]"
+          playsInline
         ></video>
       </div>
       <button className="w-10 h-10 rounded-full bg-emerald-500 ring-4 ring-offset-2 ring-black shadow-2xl hover:bg-emerald-600 active:bg-emerald-800 transition duration-200"></button>
