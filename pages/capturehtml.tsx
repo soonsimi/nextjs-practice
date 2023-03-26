@@ -12,7 +12,7 @@ const Capturehtml: NextPage = () => {
 
     try {
       stream = await navigator.mediaDevices.getUserMedia({
-        video: { width: 1920, height: 1080 },
+        video: { facingMode: { exact: "environment" } },
       });
       let video: any = videoRef.current;
       video.srcObject = stream;
