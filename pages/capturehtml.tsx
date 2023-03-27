@@ -13,7 +13,7 @@ const Capturehtml: NextPage = () => {
     try {
       stream = await navigator.mediaDevices.getUserMedia({
         video:
-          window.innerWidth < 500
+          window.innerWidth < 480
             ? {
                 width: 1920,
                 height: 1080,
@@ -86,7 +86,7 @@ const Capturehtml: NextPage = () => {
         ></video>
         <button
           onClick={takePhoto}
-          className={`w-10 h-10 absolute bottom-8 md:static rounded-full bg-emerald-500 ring-4 ring-offset-2 ring-black shadow-2xl hover:bg-emerald-600 active:bg-emerald-800 transition duration-200 ${
+          className={`w-10 h-10 absolute bottom-8 rounded-full bg-emerald-500 ring-4 ring-offset-2 ring-black shadow-2xl hover:bg-emerald-600 active:bg-emerald-800 transition duration-200 ${
             hasPhoto ? "hidden" : "block"
           }`}
         ></button>
