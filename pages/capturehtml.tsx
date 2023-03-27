@@ -30,8 +30,8 @@ const Capturehtml: NextPage = () => {
   };
 
   const takePhoto = () => {
-    const width = 414;
-    const height = width / (16 / 9);
+    const width = window.innerWidth;
+    const height = window.innerHeight;
 
     let video: any = videoRef.current;
     let photo: any = photoRef.current;
@@ -73,7 +73,7 @@ const Capturehtml: NextPage = () => {
   }, [videoRef]);
 
   return (
-    <div className="w-screen h-screen flex flex-col items-center">
+    <div className="w-screen h-screen fixed flex flex-col items-center">
       <div
         className={`md:my-10 flex justify-center relative ${
           hasPhoto ? "hidden" : "block"
@@ -86,7 +86,7 @@ const Capturehtml: NextPage = () => {
         ></video>
         <button
           onClick={takePhoto}
-          className={`w-10 h-10 absolute bottom-5 md:static rounded-full bg-emerald-500 ring-4 ring-offset-2 ring-black shadow-2xl hover:bg-emerald-600 active:bg-emerald-800 transition duration-200 ${
+          className={`w-10 h-10 absolute bottom-8 md:static rounded-full bg-emerald-500 ring-4 ring-offset-2 ring-black shadow-2xl hover:bg-emerald-600 active:bg-emerald-800 transition duration-200 ${
             hasPhoto ? "hidden" : "block"
           }`}
         ></button>
