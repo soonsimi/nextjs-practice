@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 import Image from "next/image";
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import Webcam from "react-webcam";
 
 const Capturecam: NextPage = () => {
@@ -9,18 +9,15 @@ const Capturecam: NextPage = () => {
   const [hasPhoto, setHasPhoto] = useState(false);
 
   const captureImage = () => {
-    const image = webcamRef.current.getScreenshot({
-      width: 1920,
-      height: 1080,
-    });
+    const image = webcamRef.current.getScreenshot();
     setImageSrc(image);
     setHasPhoto(true);
   };
 
   const videoConstraints = {
-    width: window.innerWidth,
-    height: window.innerHeight,
-    faingMode: window.innerWidth < 480 ? "environment" : "user",
+    width: 1920,
+    height: 1080,
+    faingMode: "environment",
   };
 
   return (
@@ -34,8 +31,8 @@ const Capturecam: NextPage = () => {
           audio={false}
           ref={webcamRef}
           screenshotFormat="image/jpeg"
-          width={window.innerWidth}
-          height={window.innerHeight}
+          width={1920}
+          height={1080}
           videoConstraints={videoConstraints}
           className="md:scale-x-[-1]"
         />
