@@ -18,8 +18,8 @@ const Capturecam: NextPage = () => {
   };
 
   const videoConstraints = {
-    width: window.screen.width,
-    height: window.screen.height,
+    width: window.innerWidth,
+    height: window.innerHeight,
     faingMode: window.innerWidth < 480 ? "environment" : "user",
   };
 
@@ -34,8 +34,8 @@ const Capturecam: NextPage = () => {
           audio={false}
           ref={webcamRef}
           screenshotFormat="image/jpeg"
-          width={window.screen.width}
-          height={window.screen.height}
+          width={window.innerWidth}
+          height={window.innerHeight}
           videoConstraints={videoConstraints}
           className="md:scale-x-[-1]"
         />
@@ -51,8 +51,8 @@ const Capturecam: NextPage = () => {
           <Image
             src={imageSrc}
             alt="your image"
-            width={window.screen.width}
-            height={window.screen.height}
+            width={window.innerWidth}
+            height={window.innerHeight}
             className={`bg-black relative ${hasPhoto ? "block" : "hidden"}`}
           />
           <button
