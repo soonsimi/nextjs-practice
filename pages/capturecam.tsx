@@ -17,7 +17,7 @@ const Capturecam: NextPage = () => {
   const videoConstraints = {
     width: 1920,
     height: 1080,
-    faingMode: "environment",
+    facingMode: "environment",
   };
 
   return (
