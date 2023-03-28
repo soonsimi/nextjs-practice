@@ -17,6 +17,9 @@ export default function Home() {
       <Link href="/capturecam" className="mb-5">
         <Button>Capture2</Button>
       </Link>
+      <Link href="/chat/subject" className="mb-5">
+        <Button>Chat</Button>
+      </Link>
       <Button
         outlined={false}
         size={"small"}

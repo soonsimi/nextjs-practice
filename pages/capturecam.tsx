@@ -6,7 +6,6 @@ import Webcam from "react-webcam";
 const Capturecam: NextPage = () => {
   const webcamRef: any = useRef(null);
   const [imageSrc, setImageSrc] = useState(null);
-  const [videoSrc, setVideoSrc] = useState(null);
   const [hasPhoto, setHasPhoto] = useState(false);
 
   const captureImage = () => {
@@ -18,10 +17,16 @@ const Capturecam: NextPage = () => {
     setHasPhoto(true);
   };
 
+  const videoConstraints = {
+    width: window.screen.width,
+    height: window.screen.height,
+    faingMode: window.innerWidth < 480 ? "environment" : "user",
+  };
+
   return (
-    <div>
+    <div className="w-screen h-screen fixed flex flex-col items-center">
       <div
-        className={`md:my-10 flex justify-center relative ${
+        className={`flex justify-center relative ${
           hasPhoto ? "hidden" : "block"
         }`}
       >
@@ -29,8 +34,10 @@ const Capturecam: NextPage = () => {
           audio={false}
           ref={webcamRef}
           screenshotFormat="image/jpeg"
-          width={1280}
-          height={720}
+          width={window.screen.width}
+          height={window.screen.height}
+          videoConstraints={videoConstraints}
+          className="md:scale-x-[-1]"
         />
         <button
           onClick={captureImage}
