@@ -20,8 +20,8 @@ const Subject: NextPage = () => {
   };
 
   return (
-    <div className=" w-screen h-screen flex flex-col items-center justify-center relative">
-      <div className="w-full absolute bottom-5 left-5 right-5">
+    <div className="fixed w-screen h-screen flex flex-col items-center justify-center">
+      <div className="w-full absolute bottom-10 left-5 right-5">
         <form onSubmit={onSubmit}>
           <input
             onChange={onChange}
